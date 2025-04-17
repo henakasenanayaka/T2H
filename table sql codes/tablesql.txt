@@ -1,0 +1,125 @@
+create table cus(
+cid int primary key auto_increment,
+fname varchar(20),
+lname varchar(20),
+nic varchar(20),
+mobile varchar(10),
+type varchar(10),
+email varchar(50),
+pwd varchar(20),
+lat varchar(20),
+lon varchar(20)
+);
+
+create table corder(
+oid int primary key auto_increment,
+weight varchar(20),
+date date,
+time time,
+amount float,
+ostatus varchar(20),
+reclat varchar(20),
+reclng varchar(20),
+cid int,
+FOREIGN KEY (cid) references cus(cid) ON DELETE CASCADE
+);
+
+ALTER TABLE corder
+ADD COLUMN tostation int,
+ADD COLUMN fromstation int,
+ADD CONSTRAINT fk_tostation FOREIGN KEY (tostation) REFERENCES tstation(tsid) ON DELETE CASCADE,
+ADD CONSTRAINT fk_fromstation FOREIGN KEY (fromstation) REFERENCES tstation(tsid) ON DELETE CASCADE;
+
+
+create table vtype(
+v int primary key auto_increment,
+vname varchar(30)
+);
+
+create table driver(
+did int primary key auto_increment,
+fname varchar(20),
+lname varchar(20),
+nic varchar(20),
+mobile varchar(10),
+v int,
+vid varchar(20),
+email varchar(50),
+pwd varchar(20),
+cstatus varchar(10),
+lat varchar(20),
+lng varchar(20),
+foreign key (v) references vtype(v) ON DELETE CASCADE
+);
+
+create table orderdriver(
+oid int,
+did int,
+primary key (oid,did),
+foreign key (oid) references corder(oid) ON DELETE CASCADE,
+foreign key (did) references driver(did) ON DELETE CASCADE
+);
+
+create table tadmin(
+tid int primary key auto_increment,
+fname varchar(20),
+lname varchar(20),
+nic varchar(20),
+mobile varchar(10),
+email varchar(50),
+pwd varchar(20)
+);
+
+create table tadminorder(
+oid int,
+tid int,
+primary key (oid,tid),
+foreign key (oid) references corder(oid) ON DELETE CASCADE,
+foreign key (tid) references tadmin(tid) ON DELETE CASCADE
+);
+
+create table tstation(
+tsid int primary key auto_increment,
+station varchar(50)
+);
+
+ALTER TABLE tstation
+ADD COLUMN lat VARCHAR(20),
+ADD COLUMN lng VARCHAR(20);
+
+create table tadmintstation(
+tid int,
+tsid int,
+primary key (tid, tsid),
+foreign key (tid) references tadmin(tid) ON DELETE CASCADE,
+foreign key (tsid) references tstation(tsid) ON DELETE CASCADE
+);
+
+create table ordertstation(
+oid int,
+tsid int,
+primary key (oid, tsid),
+foreign key (oid) references corder(oid) ON DELETE CASCADE,
+foreign key (tsid) references tstation(tsid) ON DELETE CASCADE
+);
+
+select b.weight,a.fname,a.lname,a.mobile,b.recname,b.recmobile,c.station,d.station,a.lat,a.lon,b.reclat,b.reclng,c.lat,c.lng,d.lat,d.lng from cus a inner join corder b on a.cid=b.cid inner join tstation c on b.tostation=c.tsid inner join tstation d on b.fromstation=d.tsid where b.ostatus = 'placed';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

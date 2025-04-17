@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+	font-family: 'Poppins',sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+
+html {
+	font-size: 70.5%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 7rem;
+}
+
+
+.btn {
+	border: 2rem solid var(black);
+	margin-top: 1rem;
+	display: inline-block;
+	padding: .8rem 3rem;
+	font-size: 1.7rem;
+	border-radius: .3rem;
+	color: #fff;
+	background: black;
+}
+
+.btn:hover {
+        background: var(transparent);
+        color: #FFBF00;
+}
+
+
+
+section {
+	padding: 2rem 9%;
+}
+
+.heading {
+	text-align: center;
+	padding: 2rem 0;
+	padding-bottom: 3.5rem;
+	color: black;
+	font-size: 3rem;
+}
+
+.heading span {
+        background: black;
+        color: #fff;
+        display: inline-block;
+        padding: .5rem 3rem;
+}
+
+.header {
+	border: 0px solid;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 9%;
+	background:black;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: #fff;
+}
+
+        .header .logo i {
+                color: #fff;
+        }
+
+.header .navbar a {
+        font-size: 1.7rem;
+        margin: 0 1rem;
+        color: #fff;
+}
+
+        .header .navbar a:hover {
+                color:#FFBF00;
+        }
+
+.header .icons div {
+        border: 1px solid;
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: .5rem;
+        background: #eee;
+        color: black;
+        font-size: 2rem;
+        margin-right: .3rem;
+        text-align: center;
+}
+
+.header .icons div:hover {
+        background:#FFBF00;
+        color: black;
+}
+
+#menu-btn {
+	display: none;
+}
+
+.header .navbar.active {
+	right: 2rem;
+	transition: .4s linear;
+}
+
+.header .search-form {
+	border: 0px solid;
+	position: absolute;
+	top: 110%;
+	right: -110%;
+	width: 50rem;
+	height: 5rem;
+	background: #fff;
+	border-radius: .5rem;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	box-shadowcolor:0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .search-form.active {
+        right: 2rem;
+        transition: .4s linear;
+}
+
+
+.header .search-form input {
+        height: 100%;
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.6rem;
+        color: black;
+        padding: 0 1.5rem;
+}
+
+.header .search-form label {
+        font-size: 2.2rem;
+        padding-right: 1.5rem;
+        color: black;
+        cursor: pointer;
+}
+
+        .header .search-form label:hover {
+                color: #FFBF00;
+        }
+
+.header .login-form {
+        border: .1px solid;
+        position: absolute;
+        width: 30rem;
+        top: 110%;
+        right: -110%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        border-radius: .5rem;
+        background: #fff;
+        text-align: center;
+}
+
+
+.header .login-form.active {
+        right: 2rem;
+        transition: .4s linear;
+}
+
+
+.header .login-form h3 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: black;
+}
+
+
+.header .login-form .box {
+        width: 100%;
+        border: 1px solid;
+        margin: .7rem 0;
+        background: #eee;
+        border-radius: .5rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+        color: black;
+}
+
+
+.header .login-form p {
+        font-size: 1.4rem;
+        padding: .5rem 0;
+        color: black;
+}
+
+
+.header .login-form p a {
+        color:black;
+        text-decoration: underline;
+}
+
+
+.home {
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        background: url(../image/Homepage1.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 17rem;
+        padding-bottom: 10rem;
+}
+
+.home .content {
+        border: 0.5px transparent;
+        background-color: whitesmoke;
+        text-align: center;
+        width: 50rem;
+}
+
+.home .content h3 {
+        color: black;
+        font-size: 3rem;
+}
+
+.home .content h3 span {
+        color:black;
+}
+
+.home .content p {
+color: var(--light-color);
+font-size: 1.7rem;
+}
+
+
+
+/*Features*/
+.features .box-container {
+border: 0px solid;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+gap: 2rem;
+}
+
+.features .box-container .box {
+        padding: 3rem 2rem;
+        background: lightgreen;
+        border: white solid;
+        outline: black;
+        text-align: center;
+}
+
+.features .box-container .box:hover {
+        box-shadow: 1px 1px 10px 4px #FFBF00;
+}
+
+.features .box-container .box img {
+        margin: 1rem 0;
+        height: 15rem;
+        width: 20rem;
+}
+
+.features .box-container .box h3 {
+        font-size: 2.5rem;
+        line-height: 1.8;
+        color: white;
+}
+
+.features .box-container .box p {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        color: white;
+        padding: 0.5rem;
+}
+
+
+/*categories*/
+.categories .box-container {
+        border: 0px solid;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 2rem;
+}
+
+.categories .box-container .box {
+        padding: 3rem 2rem;
+        background: lightgreen;
+        border: black solid;
+        outline: black;
+        text-align: center;
+}
+
+.categories .box-container .box:hover {
+        box-shadow: 1px 1px 10px 4px #FFBF00;
+}
+
+.categories .box-container .box img {
+        margin: 1rem 0;
+        height: 15rem;
+        width: 20rem;
+}
+
+.categories .box-container .box h3 {
+        font-size: 2.5rem;
+        line-height: 1.8;
+        color: black;
+}
+
+.categories .box-container .box p {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        color: black;
+        padding: 0.5rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: black;
+}
+
+.faq-container {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+
+.faq-question {
+    cursor: pointer;
+    padding: 10px;
+    background-color: grey;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: grey;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 1em;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFBF00;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+header {
+    background-color: #fff;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: black;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFBF00;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 1em;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: color #f3f3f3;
+    ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #333;
+}
+
+header p {
+    color: #666;
+}
+
+section h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+ol,
+ul {
+    margin-left: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFBF00;
+}
+
+
+/*Footer Css*/
+.footer {
+        background:black;
+}
+
+.footer .box-container {
+        border: 0px solid;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+        gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+        font-size: 2.5rem;
+        color: white;
+        padding: 1rem 0;
+}
+
+.footer .box-container .box .links {
+        display: block;
+        font-size: 1.5rem;
+        color: #fff;
+        padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+                color: #fff;
+                padding: 0.5rem;
+}
+
+.footer .box-container .box .links:hover i {
+                padding: 1.5rem;
+}
+
+.footer .box-container .box p {
+        line-height: 1.8;
+        font-size: 1.5rem;
+        color: #fff;
+        padding: 1rem 0;
+}
+
+.footer .box-container .box .share a {
+        border: opx solid;
+        height: 4rem;
+        width: 4rem;
+        line-height: 4rem;
+        border-radius: .5rem;
+        font-size: 2rem;
+        color: black;
+        margin-left: .2rem;
+        background: #eee;
+        text-align: center;
+}
+
+.footer .box-container .box .share a:hover {
+                background:#FFBF00;
+                color: #eee;
+}
+
+.footer .box-container .box .email {
+        width: 100%;
+        margin: .7rem 0;
+        padding: 1rem;
+        border-radius: .5rem;
+        background: #eee;
+        font-size: 1.6rem;
+        color: black;
+        text-transform: none;
+}
+
+.footer .credit {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem 0;
+}
+
+@media (max-width: 991px) {
+        html {
+                font-size: 55%
+        }
+
+        .header {
+                padding: 2rem;
+        }
+
+        section {
+                padding: 2rem;
+        }
+}
+
+@media (max-width: 768px) {
+        #menu-btn {
+                display: inline-block;
+        }
+
+        .header .navbar {
+                position: absolute;
+                top: 110%;
+                right: -110%;
+                width: 30rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: .5rem;
+                background-color: #fff;
+        }
+
+                .header .navbar a {
+                        font-size: 2rem;
+                        margin: 2rem 2.5rem;
+                        display: block;
+                }
+}
+
+@media (max-width: 450px) {
+        html {
+                font-size: 50%
+        }
+
+        .heading {
+                font-size: 2.5rem;
+        }
+
+        .footer {
+                text-align: center;
+        }
+}
+
+main {
+        max-width: 80%;
+        margin-top: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/*/lesmi admin css*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+
+h2 {
+    color:black;
+}
+
+.stock-container {
+    margin-top: 20px;
+}
+
+
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+}
